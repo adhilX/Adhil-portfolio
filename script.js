@@ -8,7 +8,9 @@
   function applyTheme(mode) {
     if (mode === "light") {
       root.classList.add("light");
+      root.classList.remove("dark");
     } else {
+      root.classList.add("dark");
       root.classList.remove("light");
     }
   }
@@ -41,8 +43,10 @@
   const toggle = document.getElementById("themeToggle");
   if (toggle) {
     toggle.addEventListener("click", () => {
-      const isLight = root.classList.toggle("light");
-      setStoredTheme(isLight ? "light" : "dark");
+      const isLight = root.classList.contains("light");
+      const nextMode = isLight ? "dark" : "light";
+      applyTheme(nextMode);
+      setStoredTheme(nextMode);
     });
   }
 

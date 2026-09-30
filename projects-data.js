@@ -62,24 +62,24 @@ const PROJECTS_DATA = [
 
     PROJECTS_DATA.forEach((project) => {
       const article = document.createElement("article");
-      article.className = "project-card";
+      article.className = "project-card group block border border-black/10 dark:border-white/10 rounded-md bg-white dark:bg-[#111111] overflow-hidden transition-all duration-200 hover:border-black/25 dark:hover:border-white/25 hover:-translate-y-1 hover:shadow-xl";
 
-      const tagsHtml = project.tags.map((tag) => `<li>${tag}</li>`).join("");
+      const tagsHtml = project.tags.map((tag) => `<li class="text-[9px] px-2 py-0.5 rounded-[2px] bg-neutral-100 dark:bg-[#0f0f0f] border border-black/10 dark:border-white/10 text-neutral-600 dark:text-neutral-400 font-mono">${tag}</li>`).join("");
 
       article.innerHTML = `
-        <a class="project-card__link" href="${project.link}" target="_blank" rel="noopener noreferrer" aria-label="${project.title} project">
-          <div class="project-card__media">
-            <img src="${project.image}" alt="${project.alt}" loading="lazy" data-fallback="assets/projects/placeholder.svg" />
+        <a class="project-card__link block h-full" href="${project.link}" target="_blank" rel="noopener noreferrer" aria-label="${project.title} project">
+          <div class="project-card__media aspect-[16/10] overflow-hidden border-b border-black/10 dark:border-white/10 bg-neutral-100 dark:bg-[#0f0f0f]">
+            <img src="${project.image}" alt="${project.alt}" loading="lazy" data-fallback="assets/projects/placeholder.svg" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" />
           </div>
-          <div class="project-card__body">
-            <h3 class="project-card__title">
+          <div class="project-card__body p-4 sm:p-5 flex flex-col justify-between">
+            <h3 class="project-card__title flex items-center justify-between gap-2 text-sm font-semibold text-neutral-900 dark:text-white mb-2">
               ${project.title}
-              <span class="project-card__arrow" aria-hidden="true">
+              <span class="project-card__arrow text-neutral-500 dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
               </span>
             </h3>
-            <p class="project-card__desc">${project.desc}</p>
-            <ul class="project-card__tags">
+            <p class="project-card__desc text-[11px] text-neutral-600 dark:text-neutral-400 leading-relaxed mb-3.5">${project.desc}</p>
+            <ul class="project-card__tags flex flex-wrap gap-1.5">
               ${tagsHtml}
             </ul>
           </div>

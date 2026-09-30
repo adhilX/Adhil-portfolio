@@ -165,7 +165,7 @@ const TECH_ROW_2 = [
 
       skills.forEach((skill) => {
         const li = document.createElement("li");
-        li.className = "tech-item";
+        li.className = "tech-item group flex flex-col items-center justify-center gap-2 md:gap-2.5 min-w-[80px] md:min-w-[96px] py-2.5 px-3 md:py-3.5 md:px-4 border border-black/10 dark:border-white/10 bg-white dark:bg-[#111111] rounded-[3px] shrink-0 cursor-default transition-all duration-200 hover:border-black/20 dark:hover:border-white/20 hover:bg-neutral-50 dark:hover:bg-[#141414] hover:-translate-y-1 hover:shadow-lg";
         let svg = skill.svg;
         if (loop === 1) {
           svg = svg
@@ -173,8 +173,8 @@ const TECH_ROW_2 = [
             .replace(/url\(#(node-[abc]|next-[ab])\)/g, "url(#$1-2)");
         }
         li.innerHTML = `
-          <span class="tech-item__icon" aria-hidden="true">${svg}</span>
-          <span class="tech-item__name">${skill.name}</span>
+          <span class="tech-item__icon w-6 h-6 md:w-8 md:h-8 flex items-center justify-center filter grayscale brightness-110 opacity-85 group-hover:opacity-100 group-hover:brightness-125 group-hover:scale-105 transition-all duration-200" aria-hidden="true">${svg}</span>
+          <span class="tech-item__name text-[10px] md:text-[11px] text-neutral-600 dark:text-neutral-400 group-hover:text-black dark:group-hover:text-white whitespace-nowrap tracking-wide transition-colors duration-200 font-mono">${skill.name}</span>
         `;
         ul.appendChild(li);
       });
