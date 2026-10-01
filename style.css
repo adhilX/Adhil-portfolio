@@ -84,6 +84,28 @@
 }
 
 /* ==========================================================================
+   Hero cursor blinking animation
+   ========================================================================== */
+
+.hero__cursor {
+  display: inline-block;
+  margin-left: 2px;
+  font-weight: 400;
+  user-select: none;
+  animation: cursorBlink 1s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
    Portrait frame corner brackets
    ========================================================================== */
 

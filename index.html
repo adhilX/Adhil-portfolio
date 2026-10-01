@@ -18,6 +18,15 @@
         extend: {
           fontFamily: {
             mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+          },
+          keyframes: {
+            blink: {
+              '0%, 100%': { opacity: '1' },
+              '50%': { opacity: '0' },
+            }
+          },
+          animation: {
+            blink: 'blink 1s step-end infinite',
           }
         }
       }
@@ -88,7 +97,7 @@
             <p class="hero__eyebrow text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-400 mb-2">Hey,</p>
             <h1 class="hero__title text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-neutral-900 dark:text-white mb-6 leading-[1.15]">
               I'm<br />
-              <span class="text-accent text-neutral-900 dark:text-white">Adhil P.</span><span class="hero__cursor text-neutral-900 dark:text-white animate-pulse" aria-hidden="true">|</span>
+              <span class="text-accent text-neutral-900 dark:text-white">Adhil P.</span><span class="hero__cursor text-neutral-900 dark:text-white font-normal select-none animate-blink" aria-hidden="true">|</span>
             </h1>
             <p class="hero__desc text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-xl mb-8">
               Results-driven Full Stack Developer with 2+ years of hands-on experience building scalable,
